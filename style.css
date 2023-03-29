@@ -27,3 +27,35 @@ body {
   display: none;
   text-align: center;
 }
+
+button {
+  position: absolute;
+  top: 5px;
+  width: 100px;
+  height: 30px;
+}
+
+#btn1 {
+  left: 55px;
+}
+
+#btn2 {
+  left: 165px;
+}
+
+#btn3 {
+  left: 275px;
+}
+
+#bar {
+  position: absolute;
+  top: 10px;
+  background-color: #fff;
+  height: 100%;
+  transition: width 0.1s ease;
+}
+
+#bar.hide {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
