@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#panolens-container {
+  height: 100%;
+  width: 100%;
+}
+
+.myDiv {
+  margin: 1;
+  padding: 1;
+  position: absolute;
+  left: 5000px;
+  top: 150px;
+  display: flex;
+  justify-items: center;
+  flex-direction: row;
+  align-items: bottom;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+  top: 0;
+  lefT: 0;
+  display: none;
+  text-align: center;
+}
