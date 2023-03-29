@@ -1,6 +1,7 @@
-var myElement,container,bar
+var myElement,myElement2,container,bar
 
 myElement = document.querySelector( '.myDiv' );
+myElement2 = document.querySelector( '.myDiv2' );
 bar = document.querySelector( '#bar' );
 
 //Add custom function for progress upate
@@ -37,18 +38,23 @@ viewer.addViewIndicator()
 viewer.setCameraFov(100)
 
 
-// Add panorama to viewer
-viewer.add(panorama1);
+
 
 //Add second and third pano
 viewer.add( panorama1, panorama2, panorama3 );
 
 // Create infospot
-const infospot = new PANOLENS.Infospot(100, PANOLENS.DataImage.Info,false);
+const infospot = new PANOLENS.Infospot(150, PANOLENS.DataImage.Arrow,false);
 infospot.material.opacity = 0.5 ;
-infospot.position.set(1500, -300, -800);
+infospot.position.set(1450, -200, -800);
 infospot.addHoverElement(myElement, 170);
 
+
+// Create infospot2
+const infospot2 = new PANOLENS.Infospot(100, PANOLENS.DataImage.info,false);
+infospot2.material.opacity = 0.5 ;
+infospot2.position.set(500, 200, -800);
+infospot2.addHoverElement(myElement2, 170);
 
 //Add Home button
 var controlItemPoster = {
@@ -65,8 +71,10 @@ viewer.appendControlItem(controlItemPoster);
 
 
 // Add infospot to panorama
-panorama1.add(infospot);
+panorama1.add( infospot, infospot2 );
 
+// Add panorama to viewer
+viewer.add(panorama1);
 
 
 // Maunal Set Panorama
@@ -85,4 +93,5 @@ button1.addEventListener( 'click', onButtonClick.bind( this, panorama1 ) );
 
 button2.addEventListener( 'click', onButtonClick.bind( this, panorama2 ) );
 
+button3.addEventListener( 'click', onButtonClick.bind( this, panorama3 ) );
 button3.addEventListener( 'click', onButtonClick.bind( this, panorama3 ) );
